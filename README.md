@@ -32,16 +32,6 @@ It bridges the gap between **farmers**, **buyers**, and **vendors**, allowing th
 
 ---
 
-## 🖼️ Screenshots
-
-| Home Page | Product Page | Dashboard |
-|------------|---------------|-----------|
-| ![Home](screenshots/home.png) | ![Product](screenshots/product.png) | ![Dashboard](screenshots/dashboard.png) |
-
-> *(Add real screenshots inside the `/screenshots` folder)*  
-
----
-
 ## ⚙️ Installation and Setup
 
 ### **Prerequisites**
