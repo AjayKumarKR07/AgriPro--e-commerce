@@ -1,33 +1,34 @@
 # 🌾 AgriPro — E-Commerce Platform
 
-AgriPro is an e-commerce web application built for the agricultural sector.  
-It connects **farmers**, **buyers**, and **vendors** to trade agricultural products directly — promoting transparency, fair pricing, and convenience.
+AgriPro is a **modern e-commerce web application** designed specifically for the **agricultural sector**.  
+It bridges the gap between **farmers**, **buyers**, and **vendors**, allowing them to trade agricultural products directly — ensuring **transparency, fair pricing, and accessibility**.
 
 ---
 
 ## 🚀 Features
 
-- 👩‍🌾 **Farmer Dashboard** — Add and manage product listings  
-- 🛒 **Buyer Portal** — Browse, search, and purchase items  
-- 🔍 **Smart Search & Filters** — Find products easily  
-- 💳 **Secure Checkout** — Integrated payment gateway (Stripe/Razorpay ready)  
-- 📦 **Order Management** — Track orders, delivery, and status updates  
-- ⭐ **Ratings & Reviews** — Build trust between farmers and buyers  
-- 📱 **Responsive UI** — Works on all screen sizes  
+- 👩‍🌾 **Farmer Dashboard** — Add, edit, and manage product listings  
+- 🛒 **Buyer Portal** — Browse, search, and purchase products seamlessly  
+- 🔍 **Smart Search & Filters** — Quickly find desired agricultural products  
+- 💳 **Secure Checkout** — Integrated with Razorpay/Stripe payment gateway  
+- 📦 **Order Management** — Track orders, deliveries, and payment status  
+- ⭐ **Ratings & Reviews** — Foster trust and transparency between users  
+- 📱 **Responsive UI** — Fully optimized for mobile, tablet, and desktop  
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
 - Html
 - Javascript
 - Css
 
-### Tools
-- Cloudinary for image uploads  
-- Razorpay or Stripe for payments  
-- GitHub Actions for CI/CD  
+
+### **Utilities & Tools**
+- Cloudinary → Image storage & management  
+- Razorpay / Stripe → Payment gateway integration  
+- GitHub Actions → Continuous Integration & Deployment (CI/CD)  
+- Postman → API testing  
 
 ---
 
@@ -37,18 +38,22 @@ It connects **farmers**, **buyers**, and **vendors** to trade agricultural produ
 |------------|---------------|-----------|
 | ![Home](screenshots/home.png) | ![Product](screenshots/product.png) | ![Dashboard](screenshots/dashboard.png) |
 
-*(Add your real screenshots inside a `/screenshots` folder)*
+> *(Add real screenshots inside the `/screenshots` folder)*  
 
 ---
 
 ## ⚙️ Installation and Setup
 
-### Prerequisites
-- Node.js ≥ 16  
-- npm or yarn  
-- MongoDB (local or Atlas)  
+### **Prerequisites**
+Make sure you have installed:
+- **Node.js ≥ 16**
+- **npm** or **yarn**
+- **MongoDB** (local or MongoDB Atlas account)
+- **Git** (for cloning the repository)
 
-### Clone Repository
+---
+
+### **1. Clone the Repository**
 ```bash
 git clone https://github.com/AjayKumarKR07/AgriPro--e-commerce.git
 cd AgriPro--e-commerce
