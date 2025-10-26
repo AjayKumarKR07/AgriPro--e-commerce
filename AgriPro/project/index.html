@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agripro - BigHaat Inspired App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <div class="logo">
+            <i class="fas fa-leaf"></i>
+            <span>Agripro</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link active" data-section="home-section">Home</a></li>
+            <li><a href="#" class="nav-link" data-section="products-section">Products</a></li>
+            <li><a href="#" class="nav-link" data-section="expert-section">Ask Expert</a></li>
+            <li><a href="#" class="nav-link" data-section="cart-section">Cart (<span id="cart-count">0</span>)</a></li>
+            <li id="login-nav-item">
+                <a href="#" id="login-btn">Login</a>
+            </li>
+            <li id="user-nav-item" class="user-menu hidden">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="user-name">User</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="user-dropdown">
+                    <a href="#" onclick="showSection('profile-section')">My Profile</a>
+                    <a href="#" onclick="showSection('cart-section')">My Orders</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- HOME SECTION -->
+        <section id="home-section" class="app-section">
+            <div class="hero-content">
+                <h1>Transforming Agriculture, Empowering Farmers</h1>
+                <p>Get genuine agri-inputs, expert advice, and market insights - all in one place. Join 500,000+ farmers who trust Agripro.</p>
+                <div class="cta-buttons">
+                    <button id="shop-now-btn"><i class="fas fa-shopping-cart"></i> Shop Now</button>
+                    <button class="accent" id="get-advice-btn"><i class="fas fa-question-circle"></i> Get Advice</button>
+                </div>
+            </div>
+
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400&q=80" alt="Happy Farmers" class="hero-banner">
+
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid" id="category-grid">
+                <!-- Categories will be loaded by JavaScript -->
+            </div>
+
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle">Best selling products trusted by farmers across the country</p>
+            <div class="product-grid" id="featured-products-container">
+                <!-- Featured products will be loaded here by JavaScript -->
+            </div>
+
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-container" id="steps-container">
+                <!-- Steps will be loaded by JavaScript -->
+            </div>
+
+            <h2 class="section-title">What Farmers Say</h2>
+            <div class="testimonials-container" id="testimonials-container">
+                <!-- Testimonials will be loaded by JavaScript -->
+            </div>
+        </section>
+
+        <!-- PROFILE DASHBOARD SECTION -->
+        <section id="profile-section" class="app-section hidden">
+            <!-- Profile content will be loaded by JavaScript -->
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section id="products-section" class="app-section hidden">
+            <h1 class="section-title">Our Products</h1>
+            
+            <div class="search-box">
+                <input type="text" id="product-search" placeholder="Search for products...">
+            </div>
+            
+            <div class="category-filters" id="category-filters">
+                <!-- Category filters will be loaded by JavaScript -->
+            </div>
+            
+            <div class="product-grid" id="products-container">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ASK EXPERT SECTION -->
+        <section id="expert-section" class="app-section hidden">
+            <h1 class="section-title">Ask an Expert</h1>
+            <p class="section-subtitle">Have a question about your crops? Our experts are here to help!</p>
+            <form id="expert-form">
+                <div class="form-group">
+                    <label for="crop-type">Crop Type</label>
+                    <input type="text" id="crop-type" placeholder="e.g., Tomato, Wheat" required>
+                </div>
+                <div class="form-group">
+                    <label for="question">Describe your issue</label>
+                    <textarea id="question" placeholder="Please describe the problem in detail..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="expert-image">Upload Image (Optional)</label>
+                    <input type="file" id="expert-image">
+                </div>
+                <button type="button" id="submit-question-btn">Submit Question</button>
+            </form>
+        </section>
+
+        <!-- REGISTER SECTION -->
+        <section id="register-section" class="app-section hidden">
+            <h1 class="section-title">Create an Account</h1>
+            <p class="section-subtitle">Join FarmConnect to access exclusive features and personalized services.</p>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="reg-name">Full Name</label>
+                    <input type="text" id="reg-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-phone">Phone Number</label>
+                    <input type="tel" id="reg-phone" placeholder="Enter your 10-digit phone number" required maxlength="10">
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email Address</label>
+                    <input type="email" id="reg-email" placeholder="Enter your email address">
+                </div>
+                <div class="form-group">
+                    <label for="reg-address">Address</label>
+                    <textarea id="reg-address" placeholder="Enter your full address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm-password">Confirm Password</label>
+                    <input type="password" id="reg-confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <button type="button" id="register-btn">Create Account</button>
+                <div class="form-footer">
+                    Already have an account? <a href="#" id="login-from-register">Login here</a>
+                </div>
+            </form>
+        </section>
+
+        <!-- CART SECTION -->
+        <section id="cart-section" class="app-section hidden">
+            <h1 class="section-title">Your Shopping Cart</h1>
+            <div id="cart-items">
+                <!-- Cart items will be loaded here by JavaScript -->
+            </div>
+            <div class="cart-total">
+                Total: ₹<span id="cart-total-amount">0</span>
+                <button id="proceed-checkout-btn">Proceed to Checkout</button>
+            </div>
+        </section>
+
+        <!-- CHECKOUT SECTION -->
+        <section id="checkout-section" class="app-section hidden">
+            <!-- Checkout content will be loaded by JavaScript -->
+        </section>
+
+        <!-- ORDER CONFIRMATION SECTION -->
+        <section id="order-confirmation-section" class="app-section hidden">
+            <div class="order-confirmation">
+                <i class="fas fa-check-circle"></i>
+                <h2>Order Placed Successfully!</h2>
+                <p>Thank you for your purchase. Your order has been confirmed.</p>
+                <p>Order ID: <strong id="order-id">FC-123456</strong></p>
+                <p>We'll send you a shipping confirmation email when your order ships.</p>
+                <button id="continue-shopping-btn">Continue Shopping</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content" id="footer-content">
+                <!-- Footer content will be loaded by JavaScript -->
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Agropro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div id="login-modal" class="hidden">
+        <div class="modal-content">
+            <span class="close-modal" id="close-login-modal">&times;</span>
+            <h2>Login to Your Account</h2>
+            
+            <div id="login-phone-step" class="login-step active">
+                <div class="form-group">
+                    <label for="login-phone">Phone Number</label>
+                    <input type="tel" id="login-phone" placeholder="Enter your 10-digit phone number" required maxlength="10">
+                    <div id="login-phone-error" class="login-error">Please enter a valid 10-digit phone number</div>
+                </div>
+                <button type="button" id="send-otp-btn">Send OTP</button>
+                <div class="form-footer">
+                    Don't have an account? <a href="#" id="register-from-login">Register here</a>
+                </div>
+            </div>
+            
+            <div id="login-otp-step" class="login-step">
+                <p style="margin-bottom: 15px;">OTP sent to <span id="login-otp-phone-display"></span></p>
+                <div class="form-group">
+                    <label for="login-otp">Enter OTP</label>
+                    <input type="text" id="login-otp" placeholder="Enter 6-digit OTP" required maxlength="6">
+                    <div id="login-otp-error" class="login-error">Please enter a valid OTP</div>
+                </div>
+                <div class="resend-otp" id="resend-otp-btn">Resend OTP</div>
+                <button type="button" id="verify-otp-btn">Login</button>
+                <button type="button" class="secondary" id="back-to-phone-btn" style="margin-top: 10px;">Change Phone Number</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAILS MODAL -->
+    <div id="product-modal" class="hidden">
+        <div class="product-modal-content">
+            <span class="product-modal-close" id="close-product-modal">&times;</span>
+            <div class="product-modal-body" id="product-modal-body">
+                <!-- Product details will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="data/products.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
